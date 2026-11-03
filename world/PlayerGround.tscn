@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://ha6g21uoioyp"]
+
+[ext_resource type="PackedScene" uid="uid://bpuvx7na87k2w" path="res://player/Player.tscn" id="1_6xmxd"]
+
+[sub_resource type="Gradient" id="Gradient_tcf2h"]
+offsets = PackedFloat32Array(0.6286239, 1)
+colors = PackedColorArray(0, 0.49803922, 1, 1, 0, 0.12941177, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4717r"]
+gradient = SubResource("Gradient_tcf2h")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcf2h"]
+size = Vector2(64, 64)
+
+[sub_resource type="Gradient" id="Gradient_h5o24"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mmdvd"]
+gradient = SubResource("Gradient_h5o24")
+width = 32
+height = 32
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fn3g3"]
+size = Vector2(32, 32)
+
+[sub_resource type="Gradient" id="Gradient_4717r"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h5o24"]
+gradient = SubResource("Gradient_4717r")
+width = 32
+height = 32
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmdvd"]
+size = Vector2(32, 32)
+
+[sub_resource type="Gradient" id="Gradient_mmdvd"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fn3g3"]
+gradient = SubResource("Gradient_mmdvd")
+width = 32
+height = 32
+use_hdr = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sc4t8"]
+size = Vector2(32, 32)
+
+[sub_resource type="Gradient" id="Gradient_fn3g3"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sc4t8"]
+gradient = SubResource("Gradient_fn3g3")
+width = 32
+height = 32
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ai45w"]
+size = Vector2(32, 32)
+
+[sub_resource type="Gradient" id="Gradient_sc4t8"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ai45w"]
+gradient = SubResource("Gradient_sc4t8")
+width = 32
+height = 32
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4papg"]
+size = Vector2(32, 32)
+
+[sub_resource type="Gradient" id="Gradient_ai45w"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4papg"]
+gradient = SubResource("Gradient_ai45w")
+width = 32
+height = 32
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyhu2"]
+size = Vector2(32, 32)
+
+[node name="PlayerGround" type="Node2D" unique_id=133537052]
+
+[node name="OneWayPlatform" type="Sprite2D" parent="." unique_id=1703221250]
+position = Vector2(196, 131)
+scale = Vector2(1.528, 0.2)
+texture = SubResource("GradientTexture2D_4717r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="OneWayPlatform" unique_id=1651297951]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OneWayPlatform/StaticBody2D" unique_id=563804371]
+shape = SubResource("RectangleShape2D_tcf2h")
+one_way_collision = true
+
+[node name="player2" parent="." unique_id=318584532 instance=ExtResource("1_6xmxd")]
+position = Vector2(236, 162.99998)
+
+[node name="wall1" type="Sprite2D" parent="." unique_id=653529345]
+position = Vector2(0, 136)
+scale = Vector2(1.2, 8.5)
+texture = SubResource("GradientTexture2D_mmdvd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall1" unique_id=1369607387]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1/StaticBody2D" unique_id=1060996330]
+shape = SubResource("RectangleShape2D_fn3g3")
+
+[node name="wall2" type="Sprite2D" parent="." unique_id=1134774813]
+position = Vector2(482, 134)
+scale = Vector2(1.2, 8.5)
+texture = SubResource("GradientTexture2D_h5o24")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="wall2" unique_id=498906516]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2/StaticBody2D" unique_id=1833468743]
+shape = SubResource("RectangleShape2D_mmdvd")
+
+[node name="floor" type="Sprite2D" parent="." unique_id=1298690479]
+position = Vector2(263.5, 280)
+scale = Vector2(17.09375, 2.4)
+texture = SubResource("GradientTexture2D_fn3g3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="floor" unique_id=759591124]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/StaticBody2D" unique_id=1269956539]
+shape = SubResource("RectangleShape2D_sc4t8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1463033344]
+position = Vector2(55, 210.5)
+scale = Vector2(2.25, 2.0937498)
+texture = SubResource("GradientTexture2D_sc4t8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" unique_id=1183007557]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" unique_id=1064502551]
+shape = SubResource("RectangleShape2D_ai45w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1988630625]
+position = Vector2(359.49997, 200)
+scale = Vector2(2.3437493, 2.6562505)
+texture = SubResource("GradientTexture2D_ai45w")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D2" unique_id=1822790006]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D2/StaticBody2D" unique_id=1458070601]
+shape = SubResource("RectangleShape2D_4papg")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=534558490]
+position = Vector2(138, 233.99998)
+rotation = 0.47511894
+scale = Vector2(4.273703, 1.7420309)
+texture = SubResource("GradientTexture2D_4papg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D3" unique_id=1026985969]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D3/StaticBody2D" unique_id=2021336511]
+shape = SubResource("RectangleShape2D_fyhu2")
